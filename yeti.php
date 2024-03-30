@@ -16,8 +16,3 @@ foreach ($arr as $key => $video) {
 
     ## then, commands for ytqr are here
 }
-
-function msg($str = null) {
-    echo $str;
-    echo PHP_EOL;
-}
