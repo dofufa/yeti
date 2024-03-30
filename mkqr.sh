@@ -7,13 +7,13 @@
 
 
 if [[ -z $1 ]]; then
-echo 'z-exit'
-return 0
+ echo 'z-exit'
+ return 0
 fi
 
 if [[ ${#1} -ne 11 ]]; then
-echo 'ne-exit'
-return 0
+  echo 'ne-exit'
+  return 0
 fi
 
 ## todo: add regex filter
@@ -28,8 +28,8 @@ watchurl="https://www.youtube.com/watch?v=$id"
 ## https://stackoverflow.com/a/34407620
 ## https://gist.github.com/sergeiwaigant/f0cf816e143114b6a7d81a901b5d3ce6
 xurl=$(printf %s $watchurl|jq -sRr @uri)
-
+echo $xurl
 base="https://chart.googleapis.com/chart?"
 params="cht=qr&chs=75x75&choe=utf-8&chl=${xurl}"
 qrurl=$base$params
-wget -O "qr/$qrfile" "$qrurl"
+wget -O "qr/$qrfile" $qrurl
