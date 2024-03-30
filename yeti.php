@@ -1,6 +1,6 @@
 <?php
 
-require 'msg.php';
+require_once 'msg.php';
 
 $yaml_file = '_data/foo.yaml';
 $arr = yaml_parse_file($yaml_file);
